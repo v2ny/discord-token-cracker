@@ -2,7 +2,7 @@ import CryptoJS from 'crypto-js';
 
 class TokenStructure {
     public DiscordUserId: string | undefined;
-    public DiscordUserEpochTimestamp: string = '';
+    public DiscordUserEpochTimestamp: string | undefined;
     private GrantAccessKey: string = 'SD9ma82nDSA8Dadjvs8n8SDO@#DWSa(djsa!'; // Not even needed
 
     private async crackFirstSectionOfToken(discordUserId = this.DiscordUserId, grantKey = this.GrantAccessKey) {
