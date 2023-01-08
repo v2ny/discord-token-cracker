@@ -46,10 +46,8 @@ class TokenStructure {
         const parseDate = Date.parse(combinedDate);
         const realDate = new Date(parseDate);
 
-        realDate.setMinutes(realDate.getMinutes() - 36); // We follow the algorithm "Add 15 days on the account created time and subtract 36 from the account created minutes"
+        realDate.setMinutes(realDate.getMinutes() - 36); // "Add 15 days on the account created time and subtract 36 from the account created minutes"
         const finalDate = addDays(realDate, 15);
-        console.log(finalDate)
-        
         return (finalDate.getTime() - 1293840000) / 1000; // 1293840000 is Discord epoch used for tokens, I'm sure you understood everything.
     }
 
