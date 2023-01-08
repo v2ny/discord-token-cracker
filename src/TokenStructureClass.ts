@@ -3,12 +3,12 @@ import CryptoJS from 'crypto-js';
 class TokenStructure {
     public DiscordUserId: string | undefined;
     public DiscordUserEpochTimestamp: string = '';
-    private GrantAccessKey: string = 'SD9ma82nDSA8Dadjvs8n8SDO@#DWSa(djsa!';
+    private GrantAccessKey: string = 'SD9ma82nDSA8Dadjvs8n8SDO@#DWSa(djsa!'; // Not even needed
 
     private async crackFirstSectionOfToken(discordUserId = this.DiscordUserId, grantKey = this.GrantAccessKey) {
         if (grantKey !== this.GrantAccessKey) return 'Why did you changed the grant key, It\'s not needed bruh.';
         if(discordUserId) {
-            if(discordUserId.length >= 6)
+            if(discordUserId.length >= 17)
             {
                 return btoa(discordUserId).toString();
             }
@@ -17,17 +17,6 @@ class TokenStructure {
         {
             return 'NaN id was provided.';
         }
-    }
-
-    public async reverseSecondPartEpoch(tokenSecondPart: string = this.DiscordUserEpochTimestamp) {
-        if(!tokenSecondPart) return 'Bruh, Enter the fucking second part of the fucking token.'
-
-        const tokenBuffer = Buffer.from(tokenSecondPart, 'hex');
-        console.log(tokenBuffer.toString('hex'))
-        const tokenHex = Buffer.from(tokenBuffer.toString(), 'base64url');
-        console.log(tokenHex.toString('ascii'))
-
-        return tokenHex.toString();
     }
 
     private async getEpochTimestamp(discordLookupTimestamp: string) {
