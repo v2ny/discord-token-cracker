@@ -1,0 +1,17 @@
+{
+  "name": "discord-token-cracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/main.ts"
+  },
+  "keywords": [],
+  "author": "Suffected",
+  "license": "ISC",
+  "dependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/node": "^18.11.18",
+    "crypto-js": "^4.1.1"
+  }
+}
